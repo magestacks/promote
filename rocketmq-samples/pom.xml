@@ -17,6 +17,7 @@
 
     <modules>
         <module>rocketmq-simples</module>
+        <module>rocketmq-core-sample</module>
     </modules>
 
     <properties>
@@ -54,6 +55,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>cn.longtai.promote</groupId>
+            <artifactId>rocketmq-core-sample</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

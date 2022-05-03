@@ -17,6 +17,7 @@
 
 package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple;
 
+import cn.longtai.promote.rocketmq.core.sample.RocketMQConstants;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -40,9 +41,10 @@ public class RocketmqSpringBootStarterProducerSimpleApplication implements Comma
 
     @Override
     public void run(String... args) throws Exception {
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        int maxSize = 10;
+        for (int i = 0; i < maxSize; i++) {
             Thread.sleep(10);
-            SendResult sendResult = rocketMQTemplate.syncSend("order-topic", "Hello, World!" + i);
+            SendResult sendResult = rocketMQTemplate.syncSend(RocketMQConstants.ORDER_TOPIC, "Hello, World!" + i);
             log.info("Send result :: {}", JSON.toJSONString(sendResult));
         }
     }
