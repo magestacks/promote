@@ -10,5 +10,5 @@ public class RocketMQConstants {
 
     public static final String ORDER_TOPIC = "order-topic";
 
-    public static final String MESSAGE_TOPIC = "message-topic";
+    public static final String ORDER_TOPIC_GROUP = "order-topic-producer-group";
 }

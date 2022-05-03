@@ -17,31 +17,30 @@
 
 package cn.longtai.promote.rocketmq.spring.boot.starter.consume.simple;
 
+import cn.longtai.promote.rocketmq.core.sample.RocketMQConstants;
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
-import org.springframework.boot.CommandLineRunner;
+import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
+import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.annotation.Resource;
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @SpringBootApplication
-public class RocketmqSpringBootStarterConsumeSimpleApplication implements CommandLineRunner {
+public class RocketmqSpringBootStarterConsumeSimpleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(RocketmqSpringBootStarterConsumeSimpleApplication.class, args);
     }
 
-    @Resource
-    private RocketMQTemplate rocketMQTemplate;
+    @Component
+    @RocketMQMessageListener(consumerGroup = RocketMQConstants.ORDER_TOPIC_GROUP, topic = RocketMQConstants.ORDER_TOPIC)
+    static class CustomRocketMQListener implements RocketMQListener {
 
-    @Override
-    public void run(String... args) throws Exception {
-        while (true) {
-            List<String> messages = rocketMQTemplate.receive(String.class);
-            log.info("receive from rocketMQTemplate, size: {}, messages: {}", messages.size(), messages);
+        @Override
+        public void onMessage(Object message) {
+            log.info("Message :: {}", JSON.toJSONString(message));
         }
     }
 }
