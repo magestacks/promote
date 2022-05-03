@@ -2,26 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.longtai.promote</groupId>
+    <parent>
+        <groupId>cn.longtai.promote</groupId>
+        <artifactId>rocketmq-simples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <artifactId>rocketmq-spring-boot-starter-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
     <name>rocketmq-spring-boot-starter-simple</name>
     <description>Demo project for Spring Boot</description>
-    
+
+    <modules>
+        <module>rocketmq-spring-boot-starter-consume-simple</module>
+        <module>rocketmq-spring-boot-starter-producer-simple</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     </properties>
-    
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,7 +38,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -51,9 +63,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>
-                        cn.longtai.promote.rocketmqspringbootstartersimple.RocketmqSpringBootStarterSimpleApplication
-                    </mainClass>
+                    <mainClass>cn.longtai.promote.rocketmqspringbootstartersimple.RocketmqSpringBootStarterSimpleApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

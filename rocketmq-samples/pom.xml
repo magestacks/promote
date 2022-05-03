@@ -2,11 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.longtai.promote</groupId>
+        <artifactId>promote-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
     <groupId>cn.longtai.promote</groupId>
     <artifactId>rocketmq-samples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
     <name>rocketmq-sample</name>
     <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>rocketmq-simples</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -14,6 +25,18 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -33,17 +56,5 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
