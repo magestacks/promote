@@ -18,7 +18,6 @@
 package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.mode;
 
 import cn.longtai.promote.rocketmq.core.sample.SendMessageDTO;
-import cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.base.AbstractSendRocketMQMessage;
 import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

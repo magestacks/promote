@@ -1,4 +1,4 @@
-package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.base;
+package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.mode;
 
 import cn.longtai.promote.rocketmq.core.sample.RocketMQConstants;
 import lombok.extern.slf4j.Slf4j;

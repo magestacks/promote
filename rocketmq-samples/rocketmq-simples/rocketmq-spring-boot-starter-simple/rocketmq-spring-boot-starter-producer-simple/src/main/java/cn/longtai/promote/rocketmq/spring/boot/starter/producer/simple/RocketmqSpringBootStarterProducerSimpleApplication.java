@@ -17,7 +17,7 @@
 
 package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple;
 
-import cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.base.AbstractSendRocketMQMessage;
+import cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.mode.AbstractSendRocketMQMessage;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
