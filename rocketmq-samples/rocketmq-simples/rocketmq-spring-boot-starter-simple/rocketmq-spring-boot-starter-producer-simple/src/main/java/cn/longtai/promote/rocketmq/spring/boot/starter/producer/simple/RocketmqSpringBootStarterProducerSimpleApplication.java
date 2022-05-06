@@ -17,7 +17,7 @@
 
 package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple;
 
-import cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.mode.SyncSendMessage;
+import cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.base.AbstractSendRocketMQMessage;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -33,7 +33,7 @@ public class RocketmqSpringBootStarterProducerSimpleApplication implements Comma
         SpringApplication.run(RocketmqSpringBootStarterProducerSimpleApplication.class, args);
     }
 
-    private final SyncSendMessage syncSendMessage;
+    private final AbstractSendRocketMQMessage syncSendMessage;
 
     @Override
     public void run(String... args) throws Exception {
