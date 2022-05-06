@@ -49,11 +49,11 @@ public class SyncSendMessage extends AbstractSendRocketMQMessage {
     @Override
     protected void sendMessage(int maxSendSize, String buildTopicTag) {
         for (int i = 0; i < maxSendSize; i++) {
+            String keys = UUID.randomUUID().toString();
             SendMessageDTO payload = SendMessageDTO.builder()
                     .receiver("156011xxx91")
-                    .uid(atomicInteger.incrementAndGet() + "")
+                    .uid(keys)
                     .build();
-            String keys = UUID.randomUUID().toString();
             Message<?> message = MessageBuilder
                     .withPayload(JSON.toJSONString(payload))
                     .setHeader(PROPERTY_KEYS, keys)

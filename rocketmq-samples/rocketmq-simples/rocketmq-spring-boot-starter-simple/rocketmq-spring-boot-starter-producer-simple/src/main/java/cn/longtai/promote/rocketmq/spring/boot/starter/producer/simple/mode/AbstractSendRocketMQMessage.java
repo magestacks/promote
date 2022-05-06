@@ -3,8 +3,6 @@ package cn.longtai.promote.rocketmq.spring.boot.starter.producer.simple.mode;
 import cn.longtai.promote.rocketmq.core.sample.RocketMQConstants;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static cn.longtai.promote.rocketmq.core.sample.RocketMQConstants.MESSAGE_CENTER_SEND_MESSAGE_TAG;
 
 /**
@@ -15,8 +13,6 @@ import static cn.longtai.promote.rocketmq.core.sample.RocketMQConstants.MESSAGE_
  */
 @Slf4j
 public abstract class AbstractSendRocketMQMessage {
-
-    protected final AtomicInteger atomicInteger = new AtomicInteger();
 
     /**
      * Send message.

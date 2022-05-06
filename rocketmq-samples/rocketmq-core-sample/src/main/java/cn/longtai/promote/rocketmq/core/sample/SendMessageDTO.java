@@ -17,8 +17,12 @@
 
 package cn.longtai.promote.rocketmq.core.sample;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * Send message dto.
@@ -27,10 +31,30 @@ import lombok.Data;
  * @date 2022/5/5 17:09
  */
 @Data
-@Builder
-public class SendMessageDTO {
+@Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
+public class SendMessageDTO implements Serializable {
 
     private String uid;
 
     private String receiver;
+
+    public SendMessageDTO uid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    public SendMessageDTO receiver(String receiver) {
+        this.receiver = receiver;
+        return this;
+    }
+
+    public static SendMessageDTO builder() {
+        return new SendMessageDTO();
+    }
+
+    public SendMessageDTO build() {
+        return this;
+    }
 }

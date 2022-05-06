@@ -16,6 +16,7 @@
 
     <modules>
         <module>rocketmq-spring-boot-starter-simple</module>
+        <module>spring-cloud-starter-stream-rocketmq-simple</module>
     </modules>
 
     <properties>
@@ -78,9 +79,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
-                <configuration>
-                    <mainClass>cn.longtai.promote.rocketmqsimples.RocketmqSimplesApplication</mainClass>
-                </configuration>
                 <executions>
                     <execution>
                         <id>repackage</id>
@@ -92,5 +90,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
