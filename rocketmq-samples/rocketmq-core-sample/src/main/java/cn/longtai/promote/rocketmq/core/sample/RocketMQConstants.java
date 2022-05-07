@@ -29,6 +29,8 @@ public class RocketMQConstants {
 
     public static final String MESSAGE_CENTER_SEND_MESSAGE_TAG = "message-center_send-message_tag";
 
+    public static final String MESSAGE_CENTER_SAVE_MESSAGE_TAG = "message-center_save-message_tag";
+
     public static final String MESSAGE_CENTER_PRODUCE_GROUP = "message-center_send-message_pg";
 
     public static final String MESSAGE_CENTER_CUSTOM_GROUP = "message-center_send-message_cg";

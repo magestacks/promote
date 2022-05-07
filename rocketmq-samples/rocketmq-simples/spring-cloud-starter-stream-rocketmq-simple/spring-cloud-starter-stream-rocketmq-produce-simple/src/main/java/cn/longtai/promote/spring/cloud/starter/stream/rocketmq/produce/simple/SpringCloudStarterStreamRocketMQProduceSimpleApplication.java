@@ -16,6 +16,7 @@ import org.springframework.messaging.support.MessageBuilder;
 
 import java.util.UUID;
 
+import static cn.longtai.promote.rocketmq.core.sample.RocketMQConstants.MESSAGE_CENTER_SAVE_MESSAGE_TAG;
 import static cn.longtai.promote.rocketmq.core.sample.RocketMQConstants.MESSAGE_CENTER_SEND_MESSAGE_TAG;
 
 @Slf4j
@@ -28,10 +29,18 @@ public class SpringCloudStarterStreamRocketMQProduceSimpleApplication implements
         SpringApplication.run(SpringCloudStarterStreamRocketMQProduceSimpleApplication.class, args);
     }
 
-    private final MessageChannel output;
-
     @Override
     public void run(String... args) throws Exception {
+        int maxSendSize = 10;
+        for (int i = 0; i < maxSendSize; i++) {
+            sendMessage(MESSAGE_CENTER_SEND_MESSAGE_TAG);
+            sendMessage(MESSAGE_CENTER_SAVE_MESSAGE_TAG);
+        }
+    }
+
+    private final MessageChannel output;
+
+    private void sendMessage(String tags) {
         String keys = UUID.randomUUID().toString();
         SendMessageDTO payload = SendMessageDTO.builder()
                 .receiver("156011xxx91")
@@ -40,7 +49,7 @@ public class SpringCloudStarterStreamRocketMQProduceSimpleApplication implements
         Message<?> message = MessageBuilder
                 .withPayload(JSON.toJSONString(payload))
                 .setHeader(MessageConst.PROPERTY_KEYS, keys)
-                .setHeader(MessageConst.PROPERTY_TAGS, MESSAGE_CENTER_SEND_MESSAGE_TAG)
+                .setHeader(MessageConst.PROPERTY_TAGS, tags)
                 .build();
         long startTime = System.currentTimeMillis();
         boolean sendResult = false;
