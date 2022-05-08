@@ -7,9 +7,9 @@
 ```text
 promote $ tree
 .
-└── rocketmq-samples
+└── rocketmq-sample
     ├── rocketmq-core-sample
-    └── rocketmq-simples
+    └── rocketmq-simple
         ├── rocketmq-spring-boot-starter-simple
         │   ├── rocketmq-spring-boot-starter-consume-simple
         │   ├── rocketmq-spring-boot-starter-producer-simple

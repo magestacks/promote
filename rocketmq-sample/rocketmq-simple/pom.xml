@@ -4,20 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.longtai.promote</groupId>
-        <artifactId>promote-all</artifactId>
+        <artifactId>rocketmq-sample</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>cn.longtai.promote</groupId>
-    <artifactId>rocketmq-samples</artifactId>
+    <artifactId>rocketmq-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>rocketmq-sample</name>
+    <name>rocketmq-simple</name>
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>rocketmq-simples</module>
-        <module>rocketmq-core-sample</module>
+        <module>rocketmq-spring-boot-starter-simple</module>
+        <module>spring-cloud-starter-stream-rocketmq-simple</module>
     </modules>
 
     <properties>
@@ -55,6 +54,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.longtai.promote</groupId>
+            <artifactId>rocketmq-core-sample</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
