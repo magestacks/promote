@@ -19,19 +19,16 @@ package cn.longtai.promote.rocketmq.core.sample;
 
 /**
  * Constant.
- *
- * @author chen.ma
- * @date 2022/5/3 14:07
  */
 public class RocketMQConstants {
 
-    public static final String MESSAGE_CENTER_TOPIC = "common_message-center_topic";
+    public static final String MESSAGE_CENTER_TOPIC = "framework_message-center_topic";
 
-    public static final String MESSAGE_CENTER_SEND_MESSAGE_TAG = "message-center_send-message_tag";
+    public static final String MESSAGE_CENTER_SEND_MESSAGE_TAG = "framework_message-center_send-message_tag";
 
-    public static final String MESSAGE_CENTER_SAVE_MESSAGE_TAG = "message-center_save-message_tag";
+    public static final String MESSAGE_CENTER_SAVE_MESSAGE_TAG = "framework_message-center_save-message_tag";
 
-    public static final String MESSAGE_CENTER_PRODUCE_GROUP = "message-center_send-message_pg";
+    public static final String MESSAGE_CENTER_PRODUCE_GROUP = "framework_message-center_send-message_pg";
 
-    public static final String MESSAGE_CENTER_CUSTOM_GROUP = "message-center_send-message_cg";
+    public static final String MESSAGE_CENTER_CUSTOM_GROUP = "framework_message-center_send-message_cg";
 }

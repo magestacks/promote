@@ -26,9 +26,6 @@ import java.io.Serializable;
 
 /**
  * Send message dto.
- *
- * @author chen.ma
- * @date 2022/5/5 17:09
  */
 @Data
 @Accessors(chain = true)

@@ -6,9 +6,6 @@ import org.springframework.messaging.SubscribableChannel;
 
 /**
  * My sink.
- *
- * @author chen.ma
- * @date 2022/5/7 19:08
  */
 public interface MySink extends Sink {
 
