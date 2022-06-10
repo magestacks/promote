@@ -1,3 +1,5 @@
+[👉 《小马哥的代码实战课》官方知识星球来啦！！！](https://xiaomage.info/knowledge-planet/)
+
 # Promote
 
 帮助开发者更快速搭建中间件以及框架源码的调试环境，目前已支持 Apache RocketMQ。
